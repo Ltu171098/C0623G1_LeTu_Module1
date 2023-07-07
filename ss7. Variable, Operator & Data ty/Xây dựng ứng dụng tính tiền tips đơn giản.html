@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tips Calculator</title>
+  <style>
+   input{
+     margin: 0 auto 20px;
+     padding: 0;
+     text-align: center;
+   }
+   select{
+     margin: 0 auto;
+   }
+    * {
+      margin: 0 auto 20px;
+      padding: 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+   <h1 style="background-color: crimson; width: 300px; height: 50px; text-align: center " >Tips Calculator</h1>
+<label  for="billAmount">How much was your bill?</label>
+<input type="number" id="billAmount" style="display: block; width: 200px; height:30px">
+
+<label  for="happinessLevel">How was your service?</label>
+<select  id="happinessLevel" style="display: block; width: 200px; height:50px">
+  <option value="outstanding">Outstanding</option>
+  <option value="good">Good</option>
+  <option value="okay">It was OK</option>
+  <option value="bad">BAD</option>
+  <option value="terrible">Terrible</option>
+</select>
+
+<label for="numOfPeople">How many people are sharing the bill?</label>
+<input type="number" id="numOfPeople" style="display: block; width: 200px; height:30px" >
+
+
+<button style="text-align: center; background-color: #fdc702; color: #0c0c0c; width: 200px; height:40px" onclick="calculateTips(); ">Calculate</button>
+
+<p>Total Tip: $<span id="totalTip"></span></p>
+
+<p>Tip per Person: $<span id="tipPerPerson"></span></p>
+
+<script type="text/javascript">
+  function calculateTips() {
+    let bill = parseFloat(document.getElementById("billAmount").value);
+    let happinessLevel = document.getElementById("happinessLevel").value;
+    let numOfPeople = parseInt(document.getElementById("numOfPeople").value);
+
+    let tipPercentage;
+
+    switch (happinessLevel) {
+      case "outstanding":
+        tipPercentage = 0.3;
+        break;
+      case "good":
+        tipPercentage = 0.2;
+        break;
+      case "okay":
+        tipPercentage = 0.15;
+        break;
+      case "bad":
+        tipPercentage = 0.1;
+        break;
+      case "terrible":
+        tipPercentage = 0.05;
+        break;
+      default:
+        tipPercentage = 0;
+        break;
+    }
+
+    let totalTip = bill * tipPercentage;
+    let tipPerPerson = totalTip / numOfPeople;
+
+    document.getElementById("totalTip").innerHTML = totalTip.toFixed(2);
+    document.getElementById("tipPerPerson").innerHTML = tipPerPerson.toFixed(2);
+  }
+</script>
+</body>
+</html>
