@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm ngày tháng</title>
+</head>
+<body>
+<script>
+  let input = prompt("Nhập ngày tháng năm(theo định dạng MM/YY");
+  let [thang, nam] = input.split("/").map(Number);
+  let NamNhuan = (nam % 4 ===0 && nam % 100 !== 0)|| nam % 400 ===0;
+  let so_ngay;
+  if (thang ===2){
+    so_ngay = NamNhuan ? 29 : 28;
+  } else if ([4,6,9,11].includes(thang)){
+    so_ngay = 30;
+  }else{
+    so_ngay = 31;
+  }
+  document.write(`số ngày trong tháng ${thang}/${nam} là: ${so_ngay}`);
+</script>
+</body>
+</html>
