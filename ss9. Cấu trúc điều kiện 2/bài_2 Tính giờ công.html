@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TÍNH GIỜ CÔNG</title>
+</head>
+<body>
+<script>
+    let luong = prompt("NHập vào lương của nhân viên");
+    let gioLamViec = prompt("Nhập vào số giờ làm việc của nhân viên");
+    luong = parseFloat(luong);
+    gioLamViec = parseInt(gioLamViec);
+    let thuong = 0;
+    if (gioLamViec >= 200){
+        thuong = luong * 0.2;
+    }else if (gioLamViec >= 100 && gioLamViec <=200){
+        thuong =luong * 0.1;
+    }
+    document.write("thưởng của nhân viên là:" + thuong);
+</script>
+</body>
+</html>

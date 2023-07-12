@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+<body>
+<h1>Exchange Money</h1>
+<table>
+    <th>Amount</th>
+    <th>From</th>
+    <th></th>
+    <th></th>
+    <th>To</th>
+    <tr>
+        <td><label for="am"></label><input type="number" id="am" value="amount" placeholder="Nhập số tiền"></td>
+        <td><label for="fr"></label><select id="fr">
+            <option value="USD">USD</option>
+
+        </select></td>
+        <td></td>
+        <td><label for="to"></label><select id="to">
+            <option value="VND">VND</option>
+            <option value="JPY">JPY</option>
+            <option value="RMB">RMB</option>
+            <option value="GBP">GBP</option>
+        </select></td>
+        <td></td>
+        <td></td>
+        <td><input type="submit" value="exchange" id="ex" onclick="ec()"></td>
+    <tr>
+    <tr id="result"></tr>
+</table>
+<script>
+    function ec() {
+        let a = document.getElementById("am").value;
+        let b = document.getElementById("fr").value;
+        let c = document.getElementById("to").value;
+
+        let result;
+        if (b === "USD" && c === "VND") {
+            result = (a * 23000) + " Đ";
+        } else if (b === "USD" && c === "JPY") {
+            result = (a * 110) + " ¥";
+        } else if (b === "USD" && c === "RMB") {
+            result = (a * 6.5) + " ¥";
+        } else if (b === "USD" && c === "GBP") {
+            result = (a * 0.73) + " £";
+        }
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
+</body>
+</html>

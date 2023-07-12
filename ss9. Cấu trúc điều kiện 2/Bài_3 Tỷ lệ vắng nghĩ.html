@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CHUYỂN ĐỔI TIỀN TỆ</title>
+</head>
+<body>
+<script>
+    let tongBuoi = +prompt("Nhập vào tổng số buổi học module: ");
+    let soBuoiNhgi = +prompt("Nhập vào số buổi nghĩ:");
+    let tyLeVangNghi = soBuoiNhgi / tongBuoi;
+    if (tyLeVangNghi > 0.1) {
+        if (tyLeVangNghi >= 0.2) {
+            document.write("Tỷ lệ vắng nghĩ:", tyLeVangNghi);
+            document.write("Hình thức xữ lý: buộc chuyển lớp");
+        } else {
+            document.write("Tỷ lệ vắng nghĩ:", tyLeVangNghi);
+            document.write("Hình thức xữ lý:gửi mail warning ");
+        }
+    }
+    else
+        {
+            document.write("Tỷ lệ vắng nghĩ:", tyLeVangNghi);
+            document.write("Hình thức xữ lý:không xữ lý ");
+    }
+</script>
+</body>
+</html>
