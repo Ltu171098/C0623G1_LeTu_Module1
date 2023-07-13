@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RÀNG BUỘC ĐẦU VÀO LÀ SỐ NGUYÊN TỐ</title>
+</head>
+<body>
+<script>
+  let isPrime = true ;
+  while (isPrime) {
+    let number = +prompt("Nhập vào 1 số");
+    let count = 0;
+    for (let i = 1; i <= number; i++) {
+      if (number % i === 0) {
+        count += 1;
+      }
+    }
+    if (count > 2) {
+      alert(number + " Không phải là số nguyên tố");
+    } else {
+      alert(number + ":là số nguyên tố ")
+      isPrime = true;
+    }
+  }
+</script>
+</body>
+</html>
