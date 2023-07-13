@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> TỐC ĐỘ GIÀ ĐI CỦA CHA</title>
+</head>
+<body>
+<script>
+  let tuoiCha, tuoiCon;
+  do{
+    tuoiCha = parseInt(prompt("nhập tuổi cha( Tuổi cha phải lớn hơn tuổi con là 25 tuổi"));
+    tuoiCon = parseInt(prompt("Nhập tuổi con"));
+  }while (tuoiCha - tuoiCon < 25);
+  let soNam = 0;
+  while (tuoiCha > tuoiCon * 2){
+    tuoiCha++;
+    tuoiCon++;
+    soNam++;
+  }
+  document.write("Sau" + soNam + "Năm, tuổi cha sẽ gấp đôi tuổi con");
+</script>
+</body>
+</html>
