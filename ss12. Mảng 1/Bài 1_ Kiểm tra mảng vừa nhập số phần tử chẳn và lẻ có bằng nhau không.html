@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NHẬP MẢNG TỪ BÀN PHÍM</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("Nhập vào độ dài mảng:"));
+    let arr = [];
+    for (let i = 0; i < n; i++){
+        let num = parseInt(prompt(`Nhập vào phần tử thứ ${i + 1}`));
+        arr.push(num);
+    }
+    document.write("Mảng sau khi được thêm mới:");
+    document.write(arr);
+
+    let evenNumber = 0;
+    let oddNumber = 0;
+    for ( let i =0; i < n; i++){
+        if ((arr[i]) % 2 === 0){
+            evenNumber++;
+        }else{
+            oddNumber++;
+        }
+    }
+    if (evenNumber === oddNumber){
+        document.write("</br> OK");
+    }else{
+        document.write("</br> NO" );
+    }
+    document.write("</br> Số phần tử chẳn:" + evenNumber);
+    document.write("</br> Số phần tử lẻ:" + oddNumber);
+</script>
+</body>
+</html>

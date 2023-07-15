@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NHẬP MẢNG TỪ BÀN PHÍM</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("Nhập vào độ dài của mảng"));
+    let arr = [];
+    for (let i = 0; i < n; i++){
+        let num = parseInt(prompt(`nhập vào phần tử thứ $[i + 1]`));
+        arr.push(num);
+    }
+    document.write("mảng sau khi được thêm mới là:");
+    document.write(arr);
+    let squareNumber = [];
+    for (let i = 0; i < arr.length;i++){
+        if (Math.sqrt(arr[i]) % 1 === 0){
+            squareNumber.push(arr[i]);
+        }
+    }
+    document.write("</br>các số chính phơng trong mảng là:" + squareNumber);
+</script>
+</body>
+</html>

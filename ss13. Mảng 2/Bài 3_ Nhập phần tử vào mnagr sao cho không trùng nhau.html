@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NHẬP PHẦN TỬ VÀO MẢNG SAO CH KHÔNG TRÙNG NHAU</title>
+</head>
+<body>
+<script>
+  function inputElement() {
+    let n = +prompt("Nhập vào độ dài của mảng:");
+    let arr = [];
+    for (let i =0; i < n; i++){
+      while (true){
+        let element = +prompt("Nhập vào phần tử thứ:" + (i + 1));
+        if (!arr.includes(element)){
+          arr.push(element);
+          break;
+        }else{
+          alert("Phần tử đã tồn tại trong mảng. Vui lòng nhập lại.")
+        }
+      }
+    }
+    return arr;
+  }
+  let arr = inputElement();
+  document.write("Mảng sau khi nhập:" + arr)
+</script>
+</body>
+</html>

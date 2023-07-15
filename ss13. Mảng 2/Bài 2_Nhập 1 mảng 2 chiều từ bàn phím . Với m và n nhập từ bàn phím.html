@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập 1 mảng 2 chiều từ bàn phím với độ dài m*n. Với m và n nhập từ bàn phím</title>
+</head>
+<body>
+<script>
+    let m = +prompt("Nhập số hàng (m):");
+    let n = +prompt("Nhập số cột (n)");
+    let arr = [];
+    for (let i = 0; i < m; i++) {
+        arr[i] = [];
+        for (let j = 0; j < n; j++) {
+            arr [i] [j] = 0;
+        }
+    }
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            arr[i] [j] = +prompt("Nhập phần tử ở hàng" + i + "cột" + j + ":");
+
+        }
+    }
+    document.write("Mảng sau khi được thêm mới là:</br>");
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            document.write(arr[i] [j] + "\t");
+        }
+        document.write("</br>");
+    }
+    let sumMain = 0;
+    for (let i = 0; i < Math.min(m, n); i++) {
+        sumMain += arr[i] [i];
+    }
+    let sumSecondary = 0;
+    for (let i = 0; i < Math.min(m, n); i++) {
+        sumSecondary += arr[i] [n - i - 1];
+    }
+    let sum = sumMain + sumSecondary
+    document.write("Tổng số phần tử trên hai đường chéo của mảng là:" + sum);
+</script>
+</body>
+</html>
