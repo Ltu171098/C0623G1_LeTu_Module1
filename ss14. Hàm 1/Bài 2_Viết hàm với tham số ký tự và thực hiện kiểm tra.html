@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VIẾT HÀM VỚI THAM SỐ KÝ TỰU VÀ THỰC HIỆN KIỂM TRA</title>
+</head>
+<body>
+<script>
+    let input = prompt("Nhập vào mảng, các phần tử được phân tách bởi dấu phẩy");
+    let arr = input.split(",");
+    function kiemTraMang(arr) {
+        const isNumber = arr.every(char => !isNaN(Number(char)));
+        const isLetter = arr.every(char => /^[a-zA-Z]+$/.test(char));
+
+        if (isNumber) {
+            return 1;
+        } else if (isLetter) {
+            return 0;
+        } else {
+            return -1;
+        }
+    }
+
+    let result = kiemTraMang(arr);
+    document.write("<br/>Output: " + result);
+</script>
+</body>
+</html>

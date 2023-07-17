@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> VIẾT HÀM VỚI THAM SỐ MẢN 1 CHIỀU VÀ THỰC HIỆN KIỂM TRA CHẲN LẺ</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập vào đô dài của mảng");
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+      let num = +prompt(`Nhập vào phần tử thứ ${i + 1 }`);
+      arr.push(num);
+    }
+  function number(arr) {
+    const isEven = arr.every (num => num % 2 === 0);
+    const isOdd = arr.every (num => num % 2 !== 0);
+    if (isEven){
+      return 1;
+    }else if (isOdd){
+      return 0;
+    }else{
+      return -1;
+    }
+  }
+    document.write("mảng sau khi được thêm mới là:" + arr);
+    document.write("</br>outPut:" + number(arr));
+
+</script>
+</body>
+</html>
