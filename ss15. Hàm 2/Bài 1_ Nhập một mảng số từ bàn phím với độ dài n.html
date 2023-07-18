@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = prompt("nhập mảng số, các phần tử được cách nhau bằng dấu phẩy").split(",");
+    let arr = input.map(Number);
+    function checkArray(arr) {
+        let flag = true;
+        let sum = arr[1] - arr[0];
+        for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i] + sum !== arr[i + 1]) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag === true){
+            alert("ok");
+        }else {
+            alert("no")
+        }
+    }
+    checkArray(arr);
+</script>
+</body>
+</html>
