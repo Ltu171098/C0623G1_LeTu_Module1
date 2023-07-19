@@ -9,8 +9,17 @@
     let input = prompt("Nhập vào mảng, các phần tử được phân tách bởi dấu phẩy");
     let arr = input.split(",");
     function kiemTraMang(arr) {
-        const isNumber = arr.every(char => !isNaN(Number(char)));
-        const isLetter = arr.every(char => /^[a-zA-Z]+$/.test(char));
+        let isNumber = true;
+        let isLetter = true;
+
+        for (let i = 0; i < arr.length; i++) {
+            if (isNaN(Number(arr[i]))) {
+                isNumber = false;
+            }
+            if (!/^[a-zA-Z]+$/.test(arr[i])) {
+                isLetter = false;
+            }
+        }
 
         if (isNumber) {
             return 1;
@@ -20,6 +29,7 @@
             return -1;
         }
     }
+
 
     let result = kiemTraMang(arr);
     document.write("<br/>Output: " + result);
