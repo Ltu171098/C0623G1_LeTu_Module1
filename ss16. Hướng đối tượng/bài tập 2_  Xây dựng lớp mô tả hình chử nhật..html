@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<canvas id="myCanvas" width="600" height="300" style="border: 1px solid #fdc702"></canvas>
+<script>
+    class Rectangle {
+        constructor(lenght, width) {
+            this.lenght = lenght;
+            this.width = width;
+        }
+
+        get area() {
+            return this.lenght * this.width
+        }
+
+        get perimeter() {
+            return 2 * (this.lenght + this.width);
+        }
+
+        drawRectangle() {
+            const canvas = document.getElementById("myCanvas");
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#fdc702';
+            ctx.fillRect(0, 0, this.width, this.lenght);
+        }
+    }
+
+    const rectangle = new Rectangle(600, 300);
+    console.log(`Diện tích hình chữ nhật: ${rectangle.area}`);
+    console.log(`Chu vi hình chữ nhật: ${rectangle.perimeter}`);
+    rectangle.length = 300;
+    rectangle.width = 600;
+    rectangle.drawRectangle();
+
+</script>
 </body>
 </html>
