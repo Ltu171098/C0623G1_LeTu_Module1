@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TÍNH LƯƠNG NHÂN VIÊN</title>
+</head>
+<body>
+<script>
+  let salary = +prompt("Nhập lương nhân viên");
+  let tax;
+  if (salary >=15000000){
+    tax = salary * 0.2;
+  }else if (salary >=7000000){
+    tax = salary * 0.1;
+  }else {
+    tax = salary * 0.05;
+  }
+  let net_salary = salary - tax;
+  document.write(`Thuế thu nhập của nhân viên là: ${tax.toFixed(2)} VND </br>`);
+  document.write(`Lương của nhân viên sau khi trừ thuế là: ${net_salary.toFixed(2)} VND`);
+</script>
+</body>
+</html>

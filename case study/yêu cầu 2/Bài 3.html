@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let h = parseInt(prompt("Nhập chiều cao h: "));
+    let triangleid = "";
+    for (let i = 0; i <= h; i++) {
+        let line = "";
+        for (let j = 0; j <= 2 * h; j++) {
+            if (j === h - i || j === h + i || i === h) {
+                line += "*";
+            } else {
+                line += " ";
+            }
+        }
+        triangleid += line + "\n";
+    }
+    document.write(triangleid);
+</script>
+</body>
+</html>
