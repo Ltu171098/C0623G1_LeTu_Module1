@@ -8,16 +8,18 @@
 <script>
     let h = parseInt(prompt("Nhập chiều cao h: "));
     let triangleid = "";
+    //đi qua từng hàng của tam giác
     for (let i = 0; i <= h; i++) {
         let line = "";
+        //đi qua từng ký tự trong mõi hàng tam giác
         for (let j = 0; j <= 2 * h; j++) {
             if (j === h - i || j === h + i || i === h) {
                 line += "*";
             } else {
-                line += " ";
+                line += " ";//sau khi kết thứ vòng lặp thú 2 biến line chứa chuỗi cho mỗi hàng tam giác
             }
         }
-        triangleid += line + "\n";
+        triangleid += line + "\n";//thêm hàng trên chuỗi line vào biến triangleid  và cách dòng
     }
     document.write(triangleid);
 </script>

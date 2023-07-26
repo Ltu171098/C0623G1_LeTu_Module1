@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" style="border-collapse: collapse">
+  <tr>
+    <th colspan="2">MENU NƯỚC</th>
+  </tr>
+  <tr>
+    <td>STT</td>
+    <td>Loại nước (dvt: nghìn đồng)</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Cafe</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Cam vắt</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Nước ép cà rốt</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Nước ép cà chua</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Nước lọc</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Nước dừa</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>Thoát gọi món</td>
+  </tr>
+</table>
+<br><br>
+<button onclick="order()"></button>
+<script>
+  function order() {
+    let chonNuoc;
+    let sTT = [1, 2, 3, 4, 5, 6];
+    let donGia = ["10", "20", "20", "20", "8", "25"];
+    let loaiNuoc = ["Cafe", "Cam vắt", "Nước ép cà rốt", "Nước ép cà chua", "Nước lọc", "Nước dừa"];
+    let soLuong = 0;
+    let sum = 0;
+    let thoat = false;
+    let chonNuocArr = []; // Mảng chứa các loại nước đã chọn
+
+    do {
+      chonNuoc = +prompt("Nhập STT loại nước bạn muốn chọn:");
+      for (let i = 0; i < sTT.length; i++) {
+        if (chonNuoc === sTT[i]) {
+          soLuong = +prompt("Đơn giá là: " + donGia[i] + " . Nhập số lượng: ");
+          sum += soLuong * donGia[i];
+          chonNuocArr.push( loaiNuoc[i] + "*"  + soLuong + "\n" +"Giá tiền\n" + donGia[i]);
+        }
+      }
+      if (chonNuoc === 7) {
+        let a = confirm("Chắc chắn thoát gọi nước?");
+        if (a === true) {
+          thoat = true;
+          break;
+        }
+      }
+    } while (true);
+
+    if (thoat) {
+      let message = "Các món đã chọn:</br>";
+      for (let i = 0; i < chonNuocArr.length; i++) {
+        message += chonNuocArr[i] + "</br>";
+      }
+      message += "Tổng thanh toán: " + sum;
+      document.write(message);
+    }
+  }
+</script>
+</body>
+</html>

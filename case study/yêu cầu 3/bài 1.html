@@ -5,6 +5,21 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+    let input = prompt("nhập vào mảng, các phần tử cách nhau bằng dấu phẩy");
+    let array = input.split(",").map(Number);
+    let prefixSums = prefixSum(array);
+    document.write(prefixSums);
+    function prefixSum(a) {
+        let n = a.length;
+        let b = new Array(n);
+        b[0] = a[0];
+        for (let i = 1; i < n; i++) {
+            b[i] = b[i-1] + a[i];
 
+        }return b;
+    }
+
+</script>
 </body>
 </html>

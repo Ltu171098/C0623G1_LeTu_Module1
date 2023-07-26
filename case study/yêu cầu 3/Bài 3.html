@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function maxFraction(numerators, denominators) {
+    let maxFractionIndex = 0;
+    let maxValue = numerators[0] / denominators[0];
+
+    for (let i = 1; i < numerators.length; i++) {
+      const value = numerators[i] / denominators[i];
+      if (value > maxValue) {
+        maxValue = value;
+        maxFractionIndex = i;
+      }
+    }
+
+    return maxFractionIndex;
+  }
+
+  const numerators = [5, 2, 5];
+  const denominators = [6, 3, 4];
+
+  const maxFractionIndex = maxFraction(numerators, denominators);
+
+  console.log(` phân số lớn nhất là: ${maxFractionIndex`);
+</script>
+</body>
+</html>
