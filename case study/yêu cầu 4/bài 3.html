@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let s1 = "aabccd";
+  let s2 = "adcbaa";
+  let arr1 = s1.split('');
+  let arr2 = s2.split('');
+  let newArr = [];
+  debugger
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      if (arr1[i] === arr2[j]){
+        newArr.push(arr1[i]);
+        arr1.splice(i,1);
+        arr2.splice(j,1);
+        j = -1;
+      }
+    }
+  } document.write(newArr)
+
+</script>
+</body>
+</html>

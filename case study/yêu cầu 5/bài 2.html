@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let row = +prompt("Nhập hàng");
+  let col = +prompt("Nhập cột");
+  let arr = [];
+  for (let i = 0; i < row; i++) {
+    arr[i] = [];
+    for (let j = 0; j < col; j++) {
+      arr[i][j] = +prompt("Nhập phần tử hàng " + (i + 1) + " cột " + (j + 1));
+    }
+  }
+  document.write("Mảng vừa tạo là: " + arr + "<br/>");
+
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      if (timSoNguyenTo(arr[i][j]) !== false) {
+        newArr.push(arr[i][j]);
+      }
+    }
+  }
+  document.write("Các số nguyên tố có trong mảng là: " + newArr + "<br/>");
+  document.write("Count = " + newArr.length);
+
+  function timSoNguyenTo(a) {
+    if (a < 2) {
+      return false;
+    } else {
+      for (let i = 2; i < a; i++) {
+        if (a % i === 0) {
+          return false;
+        }
+      }
+      return a;
+    }
+  }
+
+</script>
+</body>
+</html>

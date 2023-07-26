@@ -6,27 +6,51 @@
 </head>
 <body>
 <script>
-  function maxFraction(numerators, denominators) {
-    let maxFractionIndex = 0;
-    let maxValue = numerators[0] / denominators[0];
+  // function maxFraction(numerators, denominators) {
+  //   let maxFractionIndex = 0;
+  //   let maxValue = numerators[0] / denominators[0];
+  //
+  //   for (let i = 1; i < numerators.length; i++) {
+  //     const value = numerators[i] / denominators[i];
+  //     if (value > maxValue) {
+  //       maxValue = value;
+  //       maxFractionIndex = i;
+  //     }
+  //   }
+  //
+  //   return maxFractionIndex;
+  // }
+  //
+  // const numerators = [5, 2, 5];
+  // const denominators = [6, 3, 4];
+  //
+  // const maxFractionIndex = maxFraction(numerators, denominators);
+  //
+  // console.log(` phân số lớn nhất là: ${maxFractionIndex`);
+  let numerators = [5, 2, 5];
+  let denominators = [6, 3, 4];
+  let multiDenominator = 1;
+  let num = 0;
+  let newNumerators = [];
 
-    for (let i = 1; i < numerators.length; i++) {
-      const value = numerators[i] / denominators[i];
-      if (value > maxValue) {
-        maxValue = value;
-        maxFractionIndex = i;
-      }
-    }
-
-    return maxFractionIndex;
+  for (let i = 0; i < denominators.length; i++) {
+      multiDenominator *= denominators[i];
   }
+  document.write("Mẫu số chung là: " + multiDenominator + "<br/>");
 
-  const numerators = [5, 2, 5];
-  const denominators = [6, 3, 4];
+  for (let j = 0; j < numerators.length; j++) {
+      num = multiDenominator / denominators[j] * numerators[j];
+      newNumerators.push(num);
+  }
+  document.write("Tử số sau khi quy đồng lần lượt là: " + newNumerators + "<br/>");
+  let max = newNumerators[0];
 
-  const maxFractionIndex = maxFraction(numerators, denominators);
-
-  console.log(` phân số lớn nhất là: ${maxFractionIndex`);
+  for (let k = 0; k < newNumerators.length; k++) {
+      if (newNumerators[k] > max) {
+          max = newNumerators[k];
+      }
+  }
+  document.write("Chỉ số của phân số lớn nhất là: " + newNumerators.indexOf(max) + "<br/>");
 </script>
 </body>
 </html>

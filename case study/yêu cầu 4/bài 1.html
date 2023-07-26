@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let string = prompt("Nhập xâu ký tự cần sửa: ");
+  let arr1 = string.split('');
+  let a = deleteSpaceAndUpperLower(arr1); //mảng có phần tử là từng ký tự
+  let c = a.split(' ') //chuyển chuỗi thành mảng có phần tử là từng từ
+  alert("Xâu đã chuẩn hóa: " + a);
+  alert("Ký tự dài nhất là: " + findMaxLength(c));
+
+  function deleteSpaceAndUpperLower(arr) {
+
+    for (let i = 0; i < arr.length; i++) { //viết thường hết mảng
+      arr[i] = arr[i].toLowerCase();
+    }
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === " " && arr[i + 1] === " ") { //xóa khảng trắng dư
+        arr.splice(i, 1);
+        i--;
+      }
+      if (arr[i] === " ") { //viết hoa chữ cái đầu
+        arr.splice(i + 1, 1, arr[i + 1].toUpperCase());
+      } else {
+        arr.splice(0, 1, arr[0].toUpperCase());
+      }
+    }
+    return arr.join('');
+  }
+  function findMaxLength(arr) {
+    debugger
+    let max = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+      if (arr[i].length > max.length) {
+        max = arr[i];
+      }
+    }
+    return max;
+  }
+</script>
+</body>
+</html>

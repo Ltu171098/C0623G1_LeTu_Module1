@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let m = +prompt("Số hàng ma trận:"); //số mảng 1 chiều
+  let n = +prompt("Số cột ma trận:"); // số phần tử trong mảng 1 chiều
+  let array = [];
+  let sum = 0;
+  for (let i = 0; i < m; i++) {
+    array[i] = [];
+    for (let j = 0; j < n; j++) {
+      array[i][j] = +prompt("Bạn đang nhập số ở hàng " + (i + 1) + " cột " + (j + 1));
+      if (array[i][j] % 2 === 0) {
+        sum += array[i][j];
+      }
+    }
+  }
+  console.log(array);
+  document.write("Tổng các số chẵn trong mảng là: " + sum);
+</script>
+</body>
+</html>
