@@ -43,7 +43,7 @@
   </tr>
 </table>
 <br><br>
-<button onclick="order()"></button>
+<button onclick="order()">CHỌN MÓN</button>
 <script>
   function order() {
     let chonNuoc;
@@ -59,9 +59,9 @@
       chonNuoc = +prompt("Nhập STT loại nước bạn muốn chọn:");
       for (let i = 0; i < sTT.length; i++) {
         if (chonNuoc === sTT[i]) {
-          soLuong = +prompt("Đơn giá là: " + donGia[i] + " . Nhập số lượng: ");
+          soLuong = +prompt("Đơn giá là: " + donGia[i] + " Nhập số lượng: ");
           sum += soLuong * donGia[i];
-          chonNuocArr.push( loaiNuoc[i] + "*"  + soLuong + "\n" +"Giá tiền\n" + donGia[i]);
+          chonNuocArr.push( loaiNuoc[i] + "*"  + soLuong + "\n" +"Giá tiền/1 Ly " + "\n" + donGia[i]);
         }
       }
       if (chonNuoc === 7) {
